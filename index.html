@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Lighting</title>
+  </head>
+  <body onload="main()">
+    <canvas id="webgl" width="600" height="600">
+      Please use a browser that supports "canvas"
+    </canvas>
+    <p><p id="numdot">XXX</p></p>
+    <p>Grader Notes: If you want to move the light with the sliders, you have to stop it from moveing first.  I did not do the spot light. Try the disco mode, I used the R variable from the specular light to do it!   </p>
+
+    <p>
+      <span>
+        <button type="button" id="heli">Helicopter Cam</button>
+        <button type="button" id="heliOff">Helicopter Off</button>
+      </span>
+    </p>
+    
+    <p>
+      <span>
+        <button type="button" id="normalOn">Normal On</button>
+        <button type="button" id="normalOff">Normal Off</button>
+      </span>
+    </p>
+
+
+    <p>
+      <span>
+        <button type="button" id="OnButton">Light On</button>
+        <button type="button" id="OffButton">Light Off</button>
+      </span>
+    </p>
+    
+    <p>
+      <span>
+        <button type="button" id="startLight">Start Light Movement</button>
+        <button type="button" id="stopLight">Stop Light Movement</button>
+      </span>
+    </p>
+    
+
+    <p>
+      Light X <input type="range" min="-250" max="250" value="0" class="slider" id="lightSlideX">
+      Light Y <input type="range" min="-250" max="250" value="100" class="slider" id="lightSlideY">
+      Light Z <input type="range" min="-250" max="250" value="200" class="slider" id="lightSlideZ">
+    </p>
+
+    <p>
+      Magenta <input type = "range" min="-60" max="60" value="0" class="slider" id="magentaSlide">
+      Animation:
+      <button type="button" id="animationMagentaOnButton">On</button>
+      <button type="button" id="animationMagentaOffButton">Off</button>
+    </p>
+    <p>
+      Yellow <input type = "range" min="-60" max="60" value="0" class="slider" id="yellowSlide">
+      Animation:
+      <button type="button" id="animationYellowOnButton">On</button>
+      <button type="button" id="animationYellowOffButton">Off</button>
+    </p>
+
+    <p>
+      <span>
+        <button type="button" id="discoOn">Disco On</button>
+        <button type="button" id="discoOff">Disco Off</button>
+      </span>
+    </p>
+
+
+
+    <p>Godzilla is attacking the city!</p>
+    <p>Find the hidden texture to launch the missile and make Godzilla go back to the sea.</p>
+    <p>Select the correct texture to launch the missile.</p>
+    <p>
+      <img src="lizardSkin.jpg" alt="Texture 1" width="100" height="100" id="texture1" />
+      <img src="texture1.jpg" alt="Texture 2" width="100" height="100" id="texture2" />
+      <img src="texture3.jpg" alt="Texture 3" width="100" height="100" id="texture3" />
+    </p>
+
+    <script src="./lib/webgl-utils.js"></script>
+    <script src="./lib/webgl-debug.js"></script>
+    <script src="./lib/cuon-utils.js"></script>
+    <script src="./lib/cuon-matrix.js"></script>
+    <script src="./lib/cuon-matrix-cse160.js"></script>
+    <script src="./src/BlockyAminal.js"></script>
+    <script src="./src/Points.js"></script>
+    <script src="./src/Triangle.js"></script>
+    <script src="./src/Circle.js"></script>
+    <script src="./src/Drawing.js"></script>
+    <script src="./src/Game.js"></script>
+    <script src="./src/Cube.js"></script>
+    <script src="./src/Pyramid.js"></script>
+    <script src="./src/breath.js"></script>
+    <script src="./src/Camera.js"></script>
+    <script src="./src/Sphere.js"></script>
+    <script>
+      window.onload = function () {
+        main();
+        const texture1 = document.getElementById('texture1');
+        const texture2 = document.getElementById('texture2');
+        const texture3 = document.getElementById('texture3');
+
+        texture1.addEventListener('click', handleTextureClick);
+        //texture2.addEventListener('click', handleTextureClick);
+        //texture3.addEventListener('click', handleTextureClick);
+      };
+
+      
+    </script>
+  </body>
+</html>
